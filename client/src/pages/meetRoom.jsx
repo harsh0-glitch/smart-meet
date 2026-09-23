@@ -39,7 +39,7 @@ function MeetRoom() {
         console.log("Getting LiveKit token...");
 
         const response = await fetch(
-          `http://localhost:5000/api/livekit/token?room=${code}&identity=Harsha`
+          `https://smart-meet-server-0s4y.onrender.com/api/livekit/token?room=${code}&identity=Harsha`
         );
 
         if (!response.ok) {
