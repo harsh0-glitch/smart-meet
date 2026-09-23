@@ -37,10 +37,14 @@ function MeetRoom() {
     async function connectToRoom() {
       try {
         console.log("Getting LiveKit token...");
+        const identity = `user-${crypto.randomUUID()}`;
+
 
         const response = await fetch(
-          `https://smart-meet-server-0s4y.onrender.com/api/livekit/token?room=${code}&identity=Harsha`
+          `https://smart-meet-server-0s4y.onrender.com/api/livekit/token?room=${code}&identity=${identity}`
         );
+        
+
 
         if (!response.ok) {
           throw new Error("Could not get LiveKit token");
